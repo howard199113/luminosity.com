@@ -1,0 +1,475 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: url(images/topBG.gif) repeat-x left top;
+	margin: 20px;
+	line-height: normal;
+}
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 0px;
+	padding-left: 0px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+h1 {
+	font-weight: 600;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #03C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #03C;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+code {
+	font:Arial, Helvetica, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	color:#0072bc;
+}
+
+kbd {
+	font:Arial, Helvetica, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+	text-decoration:inherit;
+	font-style:inherit;
+	color: #099;
+}
+
+samp {
+	font:Arial, Helvetica, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	color: #C00;
+}
+
+var {
+	font:Arial, Helvetica, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+	text-decoration:inherit;
+	font-style:inherit;
+	color: #FF0;
+}
+.homeContentLeft var {color:#F90;}
+
+
+/* ~~ this fixed width container surrounds all other elements ~~ */
+.container {
+	width: 960px;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	position: relative;
+}
+/* ~~ This is the layout information. ~~
+
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+*/
+.content {
+	padding-top: 10px;
+	padding-right: 0;
+	padding-left: 0;
+}
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the overflow:hidden on the .container is removed */
+	clear: both;
+	height: 0;
+	font-size: 1px;
+	line-height: 0px;
+}
+/* Header */
+
+.header {
+	padding: 15px 0;
+}
+.contact {
+	float: right;
+	margin: 50px 0 0 0;
+}
+.email {
+	color: #666;
+	font-size: 12px;
+	text-align: center;
+}
+.email a {
+	color: #666;
+	padding: 0;
+}
+.email a:link, .email a:visited {
+	color: #666;
+	text-decoration: none;
+}
+.email a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+.phone {
+	color: #666;
+	font-size: 27px;
+	text-align: center;
+	font-weight: 100;
+}
+/* Top Menu */
+
+.topMenu {
+	background: #0072bc;
+	padding: 8px;
+	color: #FFF;
+	font-size: 13px;
+}
+.topMenu ul {
+	margin-left: 0;
+	padding-left: 0;
+	white-space: nowrap;
+}
+.topMenu li {
+	display: inline;
+	list-style-type: none;
+}
+.topMenu a {
+	padding: 8px 5px;
+	text-transform: uppercase;
+	color: #FFF;
+}
+.topMenu a:link, #navlist a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+.topMenu a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+.topMenu #active {
+	font-weight: 900;
+}
+/* bottom Menu */
+
+.bottomMenu {
+	margin: 10px 0;
+	padding: 25px 0 0;
+	color: #666;
+	font-size: 10px;
+	background: url(images/bottomStripe.gif) repeat-x top;
+	width:960px;
+}
+.bottomMenu ul {
+	margin-left: 0;
+	padding-left: 0;
+	white-space: nowrap;
+	float:right;
+}
+.bottomMenu li {
+	display: inline;
+	list-style-type: none;
+}
+.bottomMenu a {
+	padding: 8px 5px;
+	text-transform: uppercase;
+	color: #666;
+}
+.bottomMenu a:link, #navlist a:visited {
+	color: #666;
+	text-decoration: none;
+}
+.bottomMenu a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+.bottomMenu #navlist #active {
+	font-weight: 900;
+}
+
+.copyright {
+	float:left;
+	width:150px;
+	}
+/* Content for home Middle */
+.banner {
+	position:relative;
+	height: 300px;
+
+}
+.bannerLeft {
+	width: 571px;
+	height: 303px;
+	background: url(images/midBG.jpg) no-repeat;
+	position: relative;
+	padding: 20px 0 10px 20px;
+	text-align: center;
+}
+
+.bannerLeft h1 {
+	text-transform: uppercase;
+	font-weight:normal;
+	font-size: 35px;
+	color: #FFF;
+	padding: 4px 10px 10px 0;
+	margin:0;
+}
+
+.bannerLeft h2 {
+	font-weight: normal;
+	font-size: 30px;
+	color: #FF0;
+	padding: 0 20px 4px 0;
+	margin:0;
+}
+
+.bannerLeft h3 {
+	font-weight: normal;
+	font-size: 25px;
+	color: #FFF;
+	padding: 0 20px 4px 0;
+	margin:0;
+}
+
+.bannerLeft h4 {
+	text-transform:none;
+	font-style:italic;
+	font-weight: normal;
+	font-size: 22px;
+	color: #FF0;
+	padding: 0 20px 4px 0;
+	margin:0;
+}
+
+.bannerLeft p {
+	text-transform:none;
+	font-weight: normal;
+	font-size: 20px;
+	color: #FFF;
+	padding: 0 20px 4px 0;
+	margin:0;
+}
+
+.bannerLeft ul {
+	text-transform:none;
+	font-weight: normal;
+	font-size: 16px;
+	color: #FFF;
+	padding: 0 20px 4px 30px;
+	margin:0;
+}
+
+
+.bannerLeft ol {
+	text-transform:none;
+	font-weight: normal;
+	font-size: 16px;
+	color: #FFf;
+	padding: 0 20px 4px 30px;
+	margin:0;
+}
+
+.bannerLeft a, .bannerLeft a:link, .bannerLeft a:visited, .bannerLeft a:hover {
+	color: #FF0;
+}
+
+.homeContentLeft hr {
+	display:block;
+    border:none;
+    height:15px;
+    background: no-repeat center url('images/dividerlarge.png');
+}
+
+
+.bannerRight {
+	position: absolute;
+	width: 362px;
+	height: 303px;
+	background: url(images/Employee_Engagement_Image.jpg) no-repeat;
+	background-size: 362px 303px;
+	right:0;
+	top:0;
+}
+
+.bannerShadow {
+	width: 960px;
+	height: 50px;
+	background: url(images/homeProfileImage.jpg) no-repeat;
+}
+
+/* ---------- RIGHT ------------ */
+.homeContentRight {
+	position: absolute;
+	width: 332px;
+	background: url(images/rightBG.gif) no-repeat center bottom;
+	background-color:#9FD3EC;
+	padding: 30px 15px 50px;
+	margin: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+.homeContentRight h1 {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 100;
+	font-size: 18px;
+	padding: 0 0 10px 0;
+	margin: 0;
+	line-height:20px;
+}
+.homeContentRight h2 {
+	text-transform: none;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 0 0 10px 0;
+	margin: 0;
+	color: #0072bc;
+	line-height:22px;
+}
+.homeContentRight h3 {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 100;
+	font-size: 16px;
+	padding: 0 0 10px 0;
+	margin: 0;
+	line-height:18px;
+}
+
+.homeContentRight h4, h5, h6 {
+	text-transform: uppercase;
+	font-style:italic;
+	text-decoration: none;
+	font-weight: 100;
+	font-size: 16px;
+	padding: 0 0 10px 0;
+	margin: 0;
+	line-height:18px;
+}
+
+.homeContentRight p {
+	font-size: 12px;
+	line-height: 13px;
+	padding: 0 0 6px;
+	margin: 0;
+}
+
+.homeContentRight ul, ol {
+	padding: 0 0 10px 16px;
+	margin: 0;
+}
+.homeContentRight li {
+	padding: 0 0 3px 0;
+	margin: 0;
+	font-size: 12px;
+	line-height:13px;
+}
+
+/* ---------- END RIGHT ------------ */
+/* ---------- LEFT ------------ */
+.homeContentLeft {
+	padding: 30px 10px 10px;
+	width: 571px;
+	background: #FFF;
+	position: relative;
+}
+.homeContentLeft h1 {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 100;
+	font-size: 24px;
+	padding: 0 0 10px 0;
+	margin: 0;
+	line-height:27px;
+}
+.homeContentLeft h2 {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 18px;
+	padding: 10px 0;
+	margin: 0;
+	color: #0072bc;
+	line-height: 20px;
+}
+.homeContentLeft h3 {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 16px;
+	padding: 10px 0;
+	margin: 0;
+	color: #0072bc;
+	line-height: 18px;
+}
+
+.homeContentLeft h4, h5, h6 {
+	text-transform: uppercase;
+	font-style:italic;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 16px;
+	padding: 10px 0;
+	margin: 0;
+	color: #0072bc;
+	line-height: 18px;
+}
+
+.homeContentLeft ul, ol {
+	padding: 0 0 10px 16px;
+	margin: 0;
+	font-size: 14px;
+	line-height:15px;
+}
+.homeContentLeft li {
+	padding: 0 0 2px 0;
+	margin: 0;
+}
+
+.homeContentLeft p {
+	padding: 0 0 10px 0;
+	margin: 0;
+	font-size: 14px;
+	line-height:15px;
+}
+
+/* ---------- END LEFT ------------ */
+.shadow {
+	position: absolute;
+	width: 960px;
+	height: 29px;
+	z-index: 1000;
+	background: url(images/shadow.png) center top no-repeat;
+	overflow: visible;
+}
+
+.main {
+	position:relative;
+}
+
+.pre {
+	position:relative;
+	text-wrap:normal;
+}
